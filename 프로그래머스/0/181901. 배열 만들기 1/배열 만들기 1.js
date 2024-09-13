@@ -3,7 +3,7 @@ function solution(n, k) {
     let j=0;
     for(let i=1 ; i<=n ; i++){
         if(i%k===0){
-            answer[j++] = i;
+            answer.push(i);
         }
     }
     return answer;
