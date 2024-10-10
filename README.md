@@ -1,2 +1,2 @@
 # My.Algorithm
-This is an auto push repository for Baekjoon Online Judge created with [BaekjoonHub](https://github.com/BaekjoonHub/BaekjoonHub).
+해결한 알고리즘 문제들
