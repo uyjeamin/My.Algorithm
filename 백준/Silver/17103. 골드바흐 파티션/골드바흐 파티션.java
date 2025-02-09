@@ -1,0 +1,50 @@
+import java.io.*;
+import java.util.*;
+
+public class Main
+{
+    static boolean[] isPrime;
+    
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+        isPrimeFun(1000000);
+        
+        int t = Integer.parseInt(br.readLine());
+        
+        for(int i=0 ; i<t ; i++){
+            int input = Integer.parseInt(br.readLine());
+            int count=0;
+            
+            for(int j=2 ; j<=input/2 ; j++){
+                if(!isPrime[j]&&!isPrime[input-j]){
+                    count++;   
+                }
+            }
+            bw.write(count+"\n");
+            
+        }
+	
+		bw.close();
+		br.close();
+	}
+	
+	
+	
+	public static void isPrimeFun(int n){
+	    //소수가 false 인덱스번호가 숫자번호로 
+	   isPrime = new boolean[n+1];
+	   isPrime[0] = true;
+	   isPrime[1] = true;  
+	   
+	   for(int i=2 ; i*i<=n ; i++){
+	       if(!isPrime[i]){
+	           for(int j=i*i ; j<=n ; j+=i){
+	               isPrime[j] = true;
+	           }
+	       }
+	   }
+	}
+
+}
